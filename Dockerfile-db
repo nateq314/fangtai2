@@ -1,0 +1,6 @@
+FROM postgres:9.6-alpine
+ENV POSTGRES_DB=fangtai \
+    POSTGRES_USER=api \
+    POSTGRES_PASSWORD=abcdefgh
+
+# COPY init3.sql ./
