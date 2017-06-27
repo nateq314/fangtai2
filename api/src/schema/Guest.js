@@ -3,6 +3,7 @@ import {
   GraphQLString,
   GraphQLInt,
 } from 'graphql';
+import GraphQLDateType from './date-type';
 
 import knex from '../data/database';
 import Country from './Country';
@@ -29,6 +30,12 @@ export default new GraphQLObjectType({
     },
     last_name: {
       type: GraphQLString,
+    },
+    created_at: {
+      type: GraphQLDateType,
+    },
+    updated_at: {
+      type: GraphQLDateType,
     },
   })
 });

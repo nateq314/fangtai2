@@ -1,3 +1,3 @@
 psql -U api fangtai < schema.sql
 psql -U api fangtai < seed.sql
-rm schema.sql seed.sql
+rm *.sql

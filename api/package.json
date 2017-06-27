@@ -9,6 +9,7 @@
     "start": "nodemon --exec babel-node server.js"
   },
   "dependencies": {
+    "assert-err": "^1.1.0",
     "babel-cli": "^6.24.1",
     "babel-preset-env": "^1.5.2",
     "express": "^4.15.3",

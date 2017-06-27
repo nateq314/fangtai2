@@ -29,6 +29,16 @@ export default new GraphQLObjectType({
         return joinMonster(resolveInfo, {}, sql => knex.raw(sql));
       }
     },
+    guest: {
+      type: Guest,
+      args: {
+        id: { type: new GraphQLNonNull(GraphQLInt) }
+      },
+      where: (guestsTable, args, context) => `${guestsTable}.id = ${args.id}`,
+      resolve: (parent, args, context, resolveInfo) => {
+        return joinMonster(resolveInfo, {}, sql => knex.raw(sql));
+      }
+    },
     users: {
       type: new GraphQLList(User),
       resolve: (parent, args, context, resolveInfo) => {
