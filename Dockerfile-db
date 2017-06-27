@@ -3,4 +3,4 @@ ENV POSTGRES_DB=fangtai \
     POSTGRES_USER=api \
     POSTGRES_PASSWORD=abcdefgh
 
-COPY schema.sql ./
+COPY schema.sql seed.sql db-init ./

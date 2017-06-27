@@ -13,6 +13,7 @@ CREATE TABLE users (
 CREATE TABLE countries (
   id SERIAL PRIMARY KEY,
   name_english varchar(30),
+  abbreviation varchar(5),
   name_chinese varchar(12),
   flag_url varchar(120),
   created_at timestamp DEFAULT now() NOT NULL,
@@ -51,7 +52,7 @@ CREATE TABLE properties (
 
 CREATE TABLE guests (
   id SERIAL PRIMARY KEY,
-  country_id integer REFERENCES countries,
+  country_id integer REFERENCES countries NOT NULL,
   prefix varchar(6),
   first_name varchar(30) NOT NULL,
   middle_name varchar(30),

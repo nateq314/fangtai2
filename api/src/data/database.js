@@ -7,5 +7,6 @@ export default require('knex')({
     database: 'fangtai',
     user: 'api',
     password: 'abcdefgh'
-  }
+  },
+  debug: true
 });
