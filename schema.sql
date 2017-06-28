@@ -1,8 +1,8 @@
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
   username varchar(12) NOT NULL,
-  first_name varchar(30),
-  last_name varchar(30),
+  first_name varchar(30) NOT NULL,
+  last_name varchar(30) NOT NULL,
   chinese_name varchar(5),
   email varchar(50),
   hashed_password varchar(60),
@@ -12,7 +12,7 @@ CREATE TABLE users (
 
 CREATE TABLE countries (
   id SERIAL PRIMARY KEY,
-  name_english varchar(30),
+  name_english varchar(30) NOT NULL,
   abbreviation varchar(5),
   name_chinese varchar(12),
   flag_url varchar(120),
@@ -22,19 +22,19 @@ CREATE TABLE countries (
 
 CREATE TABLE cities (
   id SERIAL PRIMARY KEY,
-  name_english varchar(30),
+  name_english varchar(30) NOT NULL,
   name_chinese varchar(12),
-  country_id integer REFERENCES countries,
+  country_id integer REFERENCES countries NOT NULL,
   created_at timestamp DEFAULT now() NOT NULL,
   updated_at timestamp DEFAULT now()
 );
 
 CREATE TABLE developments (
   id SERIAL PRIMARY KEY,
-  name_english varchar(30),
+  name_english varchar(30) NOT NULL,
   name_chinese varchar(12),
   address varchar(100),
-  city_id integer REFERENCES cities,
+  city_id integer REFERENCES cities NOT NULL,
   created_at timestamp DEFAULT now() NOT NULL,
   updated_at timestamp DEFAULT now()
 );
@@ -44,7 +44,7 @@ CREATE TABLE properties (
   bldg varchar(4),
   house_num smallint NOT NULL,
   num_bedrooms smallint NOT NULL,
-  development_id integer REFERENCES developments,
+  development_id integer REFERENCES developments NOT NULL,
   remarks text,
   created_at timestamp DEFAULT now() NOT NULL,
   updated_at timestamp DEFAULT now()

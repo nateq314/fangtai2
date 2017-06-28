@@ -10,6 +10,7 @@ import joinMonster from 'join-monster';
 import knex from '../data/database';
 import dbCall from '../data/fetch';
 import Country from './Country';
+import Development from './Development';
 import Guest from './Guest';
 import User from './User';
 
@@ -19,6 +20,22 @@ export default new GraphQLObjectType({
   fields: () => ({
     countries: {
       type: new GraphQLList(Country),
+      resolve: (parent, args, context, resolveInfo) => {
+        return joinMonster(resolveInfo, {}, sql => knex.raw(sql));
+      }
+    },
+    developments: {
+      type: new GraphQLList(Development),
+      resolve: (parent, args, context, resolveInfo) => {
+        return joinMonster(resolveInfo, {}, sql => knex.raw(sql));
+      }
+    },
+    development: {
+      type: Development,
+      args: {
+        id: { type: new GraphQLNonNull(GraphQLInt) },
+      },
+      where: (developmentsTable, args, context) => `${developmentsTable}.id = ${args}.id`,
       resolve: (parent, args, context, resolveInfo) => {
         return joinMonster(resolveInfo, {}, sql => knex.raw(sql));
       }
