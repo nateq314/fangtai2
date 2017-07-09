@@ -23,6 +23,19 @@ INSERT INTO users (username, first_name, last_name) VALUES ('nateq314', 'Nathan'
 /* 11 */ INSERT INTO developments (name_english, city_id) VALUES ('Development K', 5);
 /* 12 */ INSERT INTO developments (name_english, city_id) VALUES ('Development L', 6);
 
+/* 1 */ INSERT INTO properties (dev_id, bldg, house_num, num_bedrooms) VALUES (1, '3', '1408', 2);
+/* 1 */ INSERT INTO properties (dev_id, bldg, house_num, num_bedrooms) VALUES (1, '3', '1603', 2);
+/* 1 */ INSERT INTO properties (dev_id, bldg, house_num, num_bedrooms) VALUES (1, '2', '510', 2);
+/* 1 */ INSERT INTO properties (dev_id, bldg, house_num, num_bedrooms) VALUES (2, '1', '1408', 2);
+/* 1 */ INSERT INTO properties (dev_id, bldg, house_num, num_bedrooms) VALUES (2, '1', '210', 2);
+/* 1 */ INSERT INTO properties (dev_id, bldg, house_num, num_bedrooms) VALUES (3, '1', '208', 2);
+/* 1 */ INSERT INTO properties (dev_id, bldg, house_num, num_bedrooms) VALUES (4, '3', '311', 2);
+/* 1 */ INSERT INTO properties (dev_id, bldg, house_num, num_bedrooms) VALUES (4, '3', '418', 2);
+/* 1 */ INSERT INTO properties (dev_id, bldg, house_num, num_bedrooms) VALUES (4, '2', '201', 2);
+/* 1 */ INSERT INTO properties (dev_id, bldg, house_num, num_bedrooms) VALUES (5, '5', '4A', 2);
+/* 1 */ INSERT INTO properties (dev_id, bldg, house_num, num_bedrooms) VALUES (5, '5', '4B', 2);
+/* 1 */ INSERT INTO properties (dev_id, bldg, house_num, num_bedrooms) VALUES (6, '6', '1110', 2);
+
 /* 1 */ INSERT INTO guests (first_name, last_name, country_id) VALUES ('Nathan', 'Quarles', 1);
 /* 2 */ INSERT INTO guests (first_name, last_name, country_id) VALUES ('Jiajia', 'Zhao', 2);
 /* 3 */ INSERT INTO guests (first_name, last_name, country_id) VALUES ('Nadia', 'Quarles', 1);

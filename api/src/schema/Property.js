@@ -1,5 +1,6 @@
 import {
   GraphQLInt,
+  GraphQLObjectType,
   GraphQLString,
 } from 'graphql';
 import GraphQLDateType from './date-type';
@@ -15,15 +16,16 @@ export default new GraphQLObjectType({
     id: { type: GraphQLInt },
     development: {
       type: Development,
+      sqlColumn: 'dev_id',
       sqlJoin: (thisTable, developmentsTable, args) => {
-        return `${thisTable}.development_id = ${developmentsTable}.id`;
+        return `${thisTable}.dev_id = ${developmentsTable}.id`;
       }
     },
     bldg: {
       type: GraphQLString
     },
     house_num: {
-      type: GraphQLInt
+      type: GraphQLString
     },
     num_bedrooms: {
       type: GraphQLInt

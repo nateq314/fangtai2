@@ -18,6 +18,7 @@ services:
       - db
     volumes:
       - ./api:/usr/src/app
+      - /usr/src/app/node_modules
     command: npm start
 
 volumes:

@@ -12,6 +12,7 @@ import dbCall from '../data/fetch';
 import Country from './Country';
 import Development from './Development';
 import Guest from './Guest';
+import Property from './Property';
 import User from './User';
 
 export default new GraphQLObjectType({
@@ -59,7 +60,17 @@ export default new GraphQLObjectType({
     properties: {
       type: new GraphQLList(Property),
       resolve: (parent, args, context, resolveInfo) => {
-        return joinMonster();
+        return joinMonster(resolveInfo, {}, sql => knex.raw(sql));
+      }
+    },
+    property: {
+      type: Property,
+      args: {
+        id: { type: new GraphQLNonNull(GraphQLInt) }
+      },
+      where: (propertiesTable, args, context) => `${propertiesTable}.id = ${args.id}`,
+      resolve: (parent, args, context, resolveInfo) => {
+        return joinMonster(resolveInfo, {}, sql => knex.raw(sql));
       }
     },
     users: {

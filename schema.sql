@@ -42,9 +42,10 @@ CREATE TABLE developments (
 CREATE TABLE properties (
   id SERIAL PRIMARY KEY,
   bldg varchar(4),
-  house_num smallint NOT NULL,
+  unit varchar(4),
+  house_num varchar(8) NOT NULL,
   num_bedrooms smallint NOT NULL,
-  development_id integer REFERENCES developments NOT NULL,
+  dev_id integer REFERENCES developments NOT NULL,
   remarks text,
   created_at timestamp DEFAULT now() NOT NULL,
   updated_at timestamp DEFAULT now()
