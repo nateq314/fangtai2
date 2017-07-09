@@ -56,6 +56,12 @@ export default new GraphQLObjectType({
         return joinMonster(resolveInfo, {}, sql => knex.raw(sql));
       }
     },
+    properties: {
+      type: new GraphQLList(Property),
+      resolve: (parent, args, context, resolveInfo) => {
+        return joinMonster();
+      }
+    },
     users: {
       type: new GraphQLList(User),
       resolve: (parent, args, context, resolveInfo) => {
